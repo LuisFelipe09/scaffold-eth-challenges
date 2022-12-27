@@ -19,7 +19,7 @@ contract RiggedRoll is Ownable {
     function riggedRoll() public payable{
         uint256 nonce = diceGame.nonce();
         bytes32 prevHash = blockhash(block.number - 1);
-        bytes32 hash = keccak256(abi.encodePacked(prevHash, address(this), nonce));
+        bytes32 hash = keccak256(abi.encodePacked(prevHash, address(diceGame), nonce));
         uint256 roll = uint256(hash) % 16;
 
         console.log('\t',"   Dice Game rigged Roll:",roll);
