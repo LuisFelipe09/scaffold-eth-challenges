@@ -474,9 +474,9 @@ function App(props) {
     });
   };
 
-  /*
   const riggedRoll = async () => {
     tx(writeContracts.RiggedRoll.riggedRoll({ gasLimit: 500000 }), update => {
+
       console.log("TX UPDATE", update);
       if (update?.status === "sent" || update?.status === 1) {
         setDiceRolled(true);
@@ -503,7 +503,6 @@ function App(props) {
       setDiceRolled(false);
     }
   });
-*/
 
   const filter = readContracts.DiceGame?.filters.Roll(address, null);
 
@@ -573,7 +572,6 @@ function App(props) {
                   <Button type="primary" disabled={diceRolled} onClick={rollTheDice}>
                     Roll the dice!
                   </Button>
-                  {/*
                   <div style={{ padding: 16 }}>
                     <Account
                       address={readContracts?.RiggedRoll?.address}
@@ -590,7 +588,6 @@ function App(props) {
                       Rigged Roll!
                     </Button>
                   </div>
-                */}
                 </div>
                 {diceRollImg}
               </div>
